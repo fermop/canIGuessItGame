@@ -19,7 +19,6 @@ function active(e) {
 
     e.target.nextElementSibling.classList.remove('btn--active');
     e.target.nextElementSibling.removeAttribute('disabled');
-    console.log(contador);
   } else if(e.target.previousElementSibling.classList.contains('btn--active') && contador > 0) {
     e.target.classList.add('btn--active');
     e.target.setAttribute('disabled', '');
@@ -27,20 +26,17 @@ function active(e) {
 
     e.target.previousElementSibling.classList.remove('btn--active');
     e.target.previousElementSibling.removeAttribute('disabled');
-    console.log(contador);
   } else {
     e.target.classList.add('btn--active');
     e.target.setAttribute('disabled', '');
 
     e.target.previousElementSibling.classList.remove('btn--active');
     e.target.previousElementSibling.removeAttribute('disabled');
-    console.log(contador);
   }
 }
 
 btnReveal.onclick = function() {
   resultWrapper.classList.toggle('show');
-  console.log(resultNumber.textContent = contador);
   resultNumber.textContent = contador;
 }
 
