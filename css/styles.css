@@ -1,0 +1,223 @@
+:root {
+  --white: #fff;
+  --black: #444;
+  --gray: #EBEAED;
+  --headings: #1E0E62;
+  --text: rgba(21, 20, 57, 0.4);
+  --bg: #F1F1F1;
+
+  --ff-base: 'DM Sans', sans-serif;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+}
+    /* ----- Reset ----- */
+
+/* 1. More-intuitive box-sizing model. */
+*, *::before, *::after {box-sizing: border-box;}
+/* 2. Remove default margin */
+* {margin: 0; padding: 0;}
+/* 3. Allow percentage-based heights in the application */
+/* html, body {height: 100%;} */
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {display: block;max-width: 100%;}
+/* 7. Remove built-in form typography styles */
+input, button, textarea, select {font: inherit;}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
+
+/* ----- Global ----- */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+body {
+  font-family: var(--ff-base);
+  background-color: var(--bg);
+}
+h1, h2, h3, h4, a, .nav-icon, .howto__text span {
+  color: var(--headings);
+}
+p, div {
+  color: var(--black);
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+a:hover,
+.nav-icon:hover,
+button:hover {
+  transition: 250ms;
+  opacity: .7;
+  transform: scale(1.025);
+}
+/* ----- Header ----- */
+header {
+  width: 100%;
+  height: 3.0625rem;
+  background-color: var(--white);
+  padding: .5rem 0;
+  position: sticky;
+  top: 0;
+}
+h1 {
+  font-size: 1.375rem;
+}
+h2 {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.nav-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hamburger {
+  display: block;
+}
+.nav-list {
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 3.125rem;
+  left: 0;
+  background-color: var(--white);
+  transition: 300ms;
+}
+.toggle {
+  height: 15rem;
+}
+.nav-link {
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  display: block;
+  text-align: center;
+}
+.active {
+  font-weight: 500;
+}
+.container {
+  width: 85%;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+.howto__text,
+.card__buttons p {
+  text-align: justify;
+}
+.howto__text span {
+  font-weight: 500;
+}
+.cards-container {
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.card {
+  width: 100%;
+  max-width: 18.75rem;
+  border: 0.0625rem solid var(--black);
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+.card__title {
+  margin-left: 1rem;
+}
+.card__numbers {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.card__buttons {
+  padding: 1rem 1rem 0;
+}
+.buttons-wrapper {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn {
+  width: 3rem;
+  color: var(--black);
+  font-size: 0.875rem;
+  text-align: center;
+  border: 0.0625rem solid var(--black);
+  border-radius: .75rem;
+}
+.btn--active,
+.btn-reveal {
+  background-color: var(--black);
+  color: var(--bg);
+}
+.btn-reveal {
+  width: 100%;
+  max-width: 18.75rem;
+  border: 0.0625rem solid var(--black);
+  border-radius: .75rem;
+  margin: 1rem auto 2rem;
+  padding: .5rem;
+  display: block;
+}
+
+.result-wrapper {  
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  background-color: rgba(21, 20, 57, 0.4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 500ms;
+}
+.show {
+  width: 100vw;
+  height: calc(100vh - 3.0625rem);
+}
+.result__card {
+  background-color: var(--bg);
+  min-width: 15.625rem;
+  width: 50%;
+  height: 50vh;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+@media (min-width: 740px) {
+  .nav-list {
+    width: unset;
+    height: auto;
+    display: block;
+    position: unset;
+  }
+  .nav-link {
+    padding: 0 1rem;
+    display: inline-block;
+  }
+  .hamburger {
+    display: none;
+  }
+}
