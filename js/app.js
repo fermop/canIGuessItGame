@@ -53,15 +53,6 @@ btnPlayAgain.onclick = function() {
   }
 }
 
-btnActive[0].addEventListener('click', active);
-btnActive[1].addEventListener('click', active);
-btnActive[2].addEventListener('click', active);
-btnActive[3].addEventListener('click', active);
-btnActive[4].addEventListener('click', active);
-btnActive[5].addEventListener('click', active);
-btnActive[6].addEventListener('click', active);
-btnActive[7].addEventListener('click', active);
-btnActive[8].addEventListener('click', active);
-btnActive[9].addEventListener('click', active);
-btnActive[10].addEventListener('click', active);
-btnActive[11].addEventListener('click', active);
+for (let i = 0; i < btnActive.length; i++) {
+  btnActive[i].addEventListener('click', active);
+}
